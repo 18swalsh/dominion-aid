@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+  "name": "DominionAid",
+  "description": "Aid for dominion.games card game",
+  "version": "1.0",
+  "author": "Steve Walsh",
+  "icons": {"32":"dominion icon.png"},
+  "browser_action": {
+    "default_icon": "dominion icon.png",
+    "default_title": "Dominion Aid",
+    "default_popup": "popup.html"
+  },
+  "chrome_url_overrides" : {  "newtab": "newtab.html"},
+  "permissions": [
+    "tabs",
+    "http://*/*",
+    "https://*/*",
+    "dominion.games"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["http://*/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "page": "backgroundPage.html"
+  }
+
+
+}
